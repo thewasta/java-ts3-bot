@@ -1,8 +1,8 @@
 package Events;
 
+import Load.Load;
 import com.github.theholywaffle.teamspeak3.api.event.*;
 import com.github.theholywaffle.teamspeak3.api.wrapper.Client;
-import load.Load;
 
 public class Event {
     public static void loadEvents() {
@@ -16,7 +16,8 @@ public class Event {
             @Override
             public void onClientJoin(ClientJoinEvent e) {
                 Client c = Load.api.getClientInfo(e.getClientId());
-                Load.api.sendPrivateMessage(c.getId(), "Bienvenido [b]" + c.getNickname() + "[/b] este es un servidor de mancos. No te ralles");
+                Load.api.sendPrivateMessage(c.getId(), "Bienvenido [b]" + c.getNickname() + "[/b] este" +
+                        " es un servidor de mancos. No te ralles \n si te trolleamos");
             }
 
             @Override
